@@ -2,11 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
   name: app
-  namespace: default 
+  namespace: flux-system 
 spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: flux-one
+    name: flux-system
   path: ./apps
   prune: true
