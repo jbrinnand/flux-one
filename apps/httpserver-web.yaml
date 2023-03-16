@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpserver 
+  namespace: default
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      httpserver: web
+  template:
+    metadata:
+      labels:
+        httpserver: web
+    spec:
+      containers:
+      - name: httpserver
+        image: jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1
+      imagePullSecrets:
+        - name: deepcred
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpserver-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    httpserver: web
+  ports:
+  - port: 9088
+    targetPort: 9088  
+
