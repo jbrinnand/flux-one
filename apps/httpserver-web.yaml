@@ -16,8 +16,6 @@ spec:
       containers:
       - name: httpserver
         image: ghcr.io/jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1 
-      imagePullSecrets:
-        - name: deepcred
 
 
 ---
