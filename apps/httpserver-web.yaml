@@ -4,7 +4,7 @@ metadata:
   name: httpserver 
   namespace: default
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       httpserver: web
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: httpserver
-        image: jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1
+        image: ghcr.io/jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1 
       imagePullSecrets:
         - name: deepcred
 
