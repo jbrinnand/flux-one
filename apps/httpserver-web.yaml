@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: httpserver
-        image: ghcr.io/jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1 
+        image: ghcr.io/jbrinnand/nomad-tech-repo1:httpserver-multi-arch-0.1.1sha256:60d3a33c94a6c4b30a1a4d672ba68f36bdcc846c4c608ad938a54e1616aef96a 
 
 
 ---
