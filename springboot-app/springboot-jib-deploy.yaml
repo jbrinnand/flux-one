@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-jib
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      springboot-jib: web
+  template:
+    metadata:
+      labels:
+        springboot-jib: web
+    spec:
+      containers:
+      - name: springboot-jib
+        image: jbrinnand/nomad-tech-repo1:spring-boot-jib-arm64-image-0.0.3
+      imagePullSecrets:
+        - name: deepcred
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-jib-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    springboot-jib: web
+  ports:
+  - port: 9058
+    targetPort: 8080
+
