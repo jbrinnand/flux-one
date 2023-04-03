@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: springboot-jib
-        image: jbrinnand/nomad-tech-repo1:spring-boot-jib-arm64-image-0.0.3
+        image: /jbrinnand/springjib-skaffold-arm64-0_0_1
       imagePullSecrets:
         - name: deepcred
 
