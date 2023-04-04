@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: springboot-jib
-        image: jbrinnand/springjib-skaffold-arm64-0_0_1:8895594-dirty
+        image: jbrinnand/springjib-skaffold-arm64:0.0.1 
       imagePullSecrets:
         - name: deepcred
 
